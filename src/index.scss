@@ -1,0 +1,85 @@
+/**
+ * @file  index.scss
+ * @author xiongchao(xiongchao@jingoal.com)
+ **/
+
+.jui-classify-nav {
+    display: flex;
+
+    &__input {
+        display: none;
+    }
+
+    &__item-wrap {
+        display: inline-block;
+    }
+
+    &__box {
+        overflow: hidden;
+        font-size: 0;
+        flex: 1;
+    }
+
+    &__expand-col {
+        display: none;
+
+        &--show {
+            display: block;
+        }
+
+        &__toggle {
+            display: inline-block;
+            padding: 8px 14px;
+            margin-bottom: 12px;
+            text-align: center;
+            background: #fff;
+            box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+            cursor: pointer;
+
+            > .arrow {
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                border-color: #b9b9b9;
+                border-width: 0 0 2px 2px;
+                border-style: solid;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+
+    &__input:checked + &__box{
+        height: auto !important;
+    }
+
+    &__input:checked ~ &__expand-col--show .arrow {
+        transform:rotateZ(135deg);
+    }
+}
+
+.jui-classify-nav {
+    &__label-items {
+        display: inline-block;
+        max-width: 188px;
+        margin: 0 16px 12px 0;
+        padding: 9px 14px;
+        font-size: 13px;
+        background: #fff;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,.08);
+        cursor: pointer;
+        word-break: break-all;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        border: 2px solid #fff;
+
+        &--active {
+            border-color: #29e;
+        }
+
+        &__text {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}
